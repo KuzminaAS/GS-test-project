@@ -1,0 +1,120 @@
+.partners {
+	width: 100%;
+	&__title {
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.6;
+		text-transform: uppercase;
+		color: var($textColor);
+		margin-bottom: 30px;
+		@include desktop {
+			font-size: 36px;
+		}
+	}
+	&__list {
+		@include flex;
+		flex-direction: column;
+		padding-bottom: 73px;
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding-bottom: 0px;
+			margin-right: -20px; //компенсируем размер отрицательным маржином чтобы ширина составила суммарно = 728px
+		}
+		@include desktop {
+			margin-right: -30px;
+			margin-top: -30px; //компенсируем размер отрицательным маржином чтобы высота составила суммарно = 270px
+		}
+	}
+	&__link {
+		@include flex;
+		width: 100%;
+		height: 100%;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			transition-duration: 1s;
+			box-shadow: -3px 0px 40px rgba(0, 0, 0, 0.1),
+				0px 0px 10px rgba(164, 164, 164, 0.03);
+		}
+	}
+	&__item {
+		width: 100%;
+		height: 140px;
+		min-height: 140px;
+		border: 1px solid#ebebf1;
+		border-radius: 5px;
+
+		@include tablet {
+			flex-basis: calc(
+				(100% / 3) - 18.33px
+			); //вычет 1.67px для соблюдения ширины пункта
+			height: auto;
+			min-height: 120px;
+			margin-right: 18.33px; //вычет 1.67px для соблюдения ширины пункта
+		}
+		@include desktop {
+			flex-basis: calc((100% / 4) - 28px);
+			margin-right: 28px;
+			margin-top: 30px;
+		}
+		&--one a {
+			background-image: url(../../img/images/henkel.png);
+			@include resolution {
+				background-image: url(../../img/images/henkel@2x.png);
+				background-size: cover;
+			}
+		}
+		&--two a {
+			background-image: url(../../img/images/jd.png);
+			@include resolution {
+				background-image: url(../../img/images/jd@2x.png);
+				background-size: cover;
+			}
+		}
+		&--three a {
+			background-image: url(../../img/images/mc.png);
+			@include resolution {
+				background-image: url(../../img/images/mc@2x.png);
+				background-size: cover;
+			}
+		}
+		&--four a {
+			background-image: url(../../img/images/ikea.png);
+			@include resolution {
+				background-image: url(../../img/images/ikea@2x.png);
+				background-size: cover;
+			}
+		}
+		&--five a {
+			background-image: url(../../img/images/reebok.png);
+			@include resolution {
+				background-image: url(../../img/images/reebok@2x.png);
+				background-size: cover;
+			}
+		}
+		&--six a {
+			background-image: url(../../img/images/nike.png);
+			@include resolution {
+				background-image: url(../../img/images/nike@2x.png);
+				background-size: cover;
+			}
+		}
+		&--seven a {
+			background-image: url(../../img/images/cp.png);
+			@include resolution {
+				background-image: url(../../img/images/cp@2x.png);
+				background-size: cover;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 20px;
+			@include desktop {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}

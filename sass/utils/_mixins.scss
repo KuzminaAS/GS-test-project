@@ -1,0 +1,34 @@
+@mixin flex($main-axis: flex-start, $cross-axis: stretch) {
+	display: flex;
+
+	@if $main-axis != flex-start {
+		justify-content: $main-axis;
+	}
+	@if $cross-axis != stretch {
+		align-items: $cross-axis;
+	}
+}
+// media
+@mixin mobile {
+	@media screen and (min-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (min-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop) {
+		@content;
+	}
+}
+@mixin resolution {
+	@media screen and (min-resolution: 192dpi),
+		screen and (min-resolution: 2dppx) {
+		@content;
+	}
+}

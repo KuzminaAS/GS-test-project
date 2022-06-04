@@ -1,0 +1,79 @@
+.header {
+	@include flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin-bottom: 70px;
+	@include tablet {
+		box-shadow: 0px 3px 10px #0000000d;
+	}
+	&__wrapper {
+		@include flex(space-between, center);
+		padding-top: 17px;
+		padding-bottom: 16px;
+		@include tablet {
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+	}
+	&__form--mobile {
+		position: relative;
+		box-shadow: 0px 3px 10px #0000000d;
+		@include tablet {
+			display: none;
+		}
+	}
+	&__form--tablet {
+		display: none;
+		@include tablet {
+			position: relative;
+			display: flex;
+			flex-grow: 0.5;
+		}
+		@include desktop {
+			flex-grow: 0.8;
+		}
+	}
+	&__search {
+		width: 100%;
+	}
+	&__pseudo-element {
+		display: block;
+		content: url(../../img/icons/Search.svg);
+		position: absolute;
+		top: 25%;
+		left: 20px;
+		@include tablet {
+			left: 12px;
+		}
+	}
+	&__user {
+		@include tablet {
+			min-height: 80px;
+			border-left: 1px solid#ebebf1;
+			a {
+				@include flex(space-between, center);
+				padding: 20px 0px 20px 20px;
+			}
+		}
+		&-name,
+		&-avatar {
+			display: none;
+			@include tablet {
+				display: block;
+			}
+		}
+		&-name {
+			font-size: 14px;
+			line-height: 1.21;
+			color: #768298;
+		}
+		&-avatar {
+			margin-left: 10px;
+		}
+		&-icon {
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+}
