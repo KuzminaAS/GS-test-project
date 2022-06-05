@@ -18,7 +18,7 @@
 		@include tablet {
 			flex-direction: row;
 			flex-wrap: wrap;
-			padding-bottom: 0px;
+			padding-bottom: 20px;
 			margin-right: -20px; //компенсируем размер отрицательным маржином чтобы ширина составила суммарно = 728px
 		}
 		@include desktop {
